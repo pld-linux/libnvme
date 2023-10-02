@@ -18,6 +18,7 @@ BuildRequires:	openssl-devel >= 1.1.0
 BuildRequires:	pkgconfig
 BuildRequires:	python3 >= 1:3.6
 BuildRequires:	python3-devel >= 1:3.6
+BuildRequires:	python3-modules >= 1:3.6
 BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	swig-python >= 2
 Requires:	json-c >= 0.13
