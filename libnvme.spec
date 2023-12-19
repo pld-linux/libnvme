@@ -1,3 +1,7 @@
+#
+# Conditional build:
+%bcond_without	static_libs	# static libraries
+
 Summary:	C Library for NVM Express on Linux
 Summary(pl.UTF-8):	Biblioteka C do obsługi NVM Express na Linuksie
 Name:		libnvme
@@ -82,6 +86,7 @@ Wiązania Pythona do libnvme.
 
 %build
 %meson build \
+	%{!?with_static_libs:--default-library=shared} \
 	-Ddocs=man \
 	-Djson-c=enabled \
 	-Dkeyutils=enabled \
@@ -126,10 +131,12 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man2/nvme_*.2*
 %{_mandir}/man2/nvmf_*.2*
 
+%if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/libnvme.a
 %{_libdir}/libnvme-mi.a
+%endif
 
 %files -n python3-libnvme
 %defattr(644,root,root,755)
