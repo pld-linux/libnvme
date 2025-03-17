@@ -5,20 +5,21 @@
 Summary:	C Library for NVM Express on Linux
 Summary(pl.UTF-8):	Biblioteka C do obsługi NVM Express na Linuksie
 Name:		libnvme
-Version:	1.11.1
-Release:	4
+Version:	1.12
+Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
 #Source0Download: https://github.com/linux-nvme/libnvme/releases
 Source0:	https://github.com/linux-nvme/libnvme/archive/v%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	b6d2e2277c81d25a213636ac97a311af
+# Source0-md5:	41298f37db7226bde0fa0c532fc8f5c3
 URL:		https://github.com/linux-nvme/libnvme
 BuildRequires:	dbus-devel
 BuildRequires:	json-c-devel >= 0.13
 BuildRequires:	keyutils-devel
-BuildRequires:	meson >= 0.50.0
+BuildRequires:	liburing-devel >= 2.2
+BuildRequires:	meson >= 0.62.0
 BuildRequires:	ninja >= 1.5
-BuildRequires:	openssl-devel >= 1.1.0
+BuildRequires:	openssl-devel >= 3.0.0
 BuildRequires:	pkgconfig
 BuildRequires:	python3 >= 1:3.6
 BuildRequires:	python3-devel >= 1:3.6
@@ -26,6 +27,7 @@ BuildRequires:	python3-modules >= 1:3.6
 BuildRequires:	rpmbuild(macros) >= 2.042
 BuildRequires:	swig-python >= 2
 Requires:	json-c >= 0.13
+Requires:	liburing >= 2.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
