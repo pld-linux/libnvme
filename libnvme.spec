@@ -5,13 +5,13 @@
 Summary:	C Library for NVM Express on Linux
 Summary(pl.UTF-8):	Biblioteka C do obsługi NVM Express na Linuksie
 Name:		libnvme
-Version:	1.16
+Version:	1.16.2
 Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
 #Source0Download: https://github.com/linux-nvme/libnvme/releases
 Source0:	https://github.com/linux-nvme/libnvme/archive/v%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	75640e06846d7977822c9428748e675d
+# Source0-md5:	a6554fb50022d762021fc1e949e01520
 URL:		https://github.com/linux-nvme/libnvme
 BuildRequires:	dbus-devel
 BuildRequires:	json-c-devel >= 0.13
